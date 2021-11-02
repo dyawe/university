@@ -67,7 +67,5 @@ public class Main {
 
         double averageGrade = student.getAverageGrade();
 
-
-
     }
 }

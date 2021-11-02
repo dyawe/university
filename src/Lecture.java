@@ -23,4 +23,13 @@ public class Lecture {
 //
 //        //return ;
 //    }
+
+
+    public double totalAverageGrade(){
+        Object reduce = students.stream()
+                .map(student -> student.getGrades());
+//                .reduce(0.0,->)
+        return 0.0;
+        //flatMapToDouble(student -> student.getGrades().stream().mapMultiToDouble())
+    }
 }

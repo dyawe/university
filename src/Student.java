@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
 
 public class Student implements Nameable, HasLevel{
     private Level level;
@@ -54,6 +56,24 @@ public class Student implements Nameable, HasLevel{
 //        double total = grades.stream().reduce(0.00,Double::sum);
 //        int count = grades.size();
 //        return total/count;
+
+
+//    public Stream<Double> doubleStream(){
+//    return grades.stream().map(grades ->grades.doubleValue());
+//
+//    }
+
+    public DoubleStream doubleStream(){
+        return grades.stream().mapToDouble(grades ->grades);
+
+    }
+
+    public OptionalDouble getHighestGrade(){
+        return grades.stream()
+                .mapToDouble(grades ->grades)
+                .max();
+    }
+
 
 
     @Override
